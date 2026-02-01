@@ -5,7 +5,7 @@ Third-party email services are often use generic domains like `@gmail.com` that 
 This system is perfect for **low to medium email volumes**, **cost-effective**, **easy to use**, boosts **team/startup credibility**, and **scales** as needed.
 
 
-## 🚀 **web-interface** - Manual Email Sender
+## **web-interface** - Manual Email Sender
 
 **Function:** Send emails manually via SES with sender dropdown + password authentication.
 
@@ -28,7 +28,7 @@ SES_REGION=us-east-1
 APP_PASSWORD=supersecret123
 ```
 
-## 🏗️ **infra** - Auto-Forward Incoming Email
+## **infra** - Auto-Forward Incoming Email
 
 **Architecture:**
 ```
