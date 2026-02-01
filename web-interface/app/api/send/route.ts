@@ -15,7 +15,8 @@ const hashedPassword = bcrypt.hashSync(process.env.APP_PASSWORD!, 10);
 
 export async function POST(req: NextRequest) {
   try {
-    const { password, to, sender, title, message } = await req.json();
+    const { password, to, sender, title, message, validateOnly } =
+      await req.json();
 
     // Validasi input
     if (!to || !sender || !message || !title) {
@@ -27,23 +28,24 @@ export async function POST(req: NextRequest) {
 
     // Validasi password
     if (!bcrypt.compareSync(password, hashedPassword)) {
-      return NextResponse.json(
-        { error: 'Password salah' },
-        { status: 401 }
-      );
+      return NextResponse.json({ error: 'Password salah' }, { status: 401 });
+    }
+
+    // Jika hanya validasi (frontend unlock), return sukses saja
+    if (validateOnly) {
+      return NextResponse.json({ success: true });
     }
 
     // Persiapkan email
     const sendEmailCommand = new SendEmailCommand({
       FromEmailAddress: sender,
-      Destination: {
-        ToAddresses: [to],
-      },
+      Destination: { ToAddresses: [to] },
       Content: {
         Simple: {
-          Subject: { Data: title }, // Gunakan title sebagai subjek
+          Subject: { Data: title },
           Body: {
-            Html: { Data: message },
+            Text: { Data: message }, // plain text
+            Html: { Data: message.replace(/\n/g, '<br>') }, // HTML dengan newline
           },
         },
       },
