@@ -1,0 +1,34 @@
+{
+  "version": "48.0.0",
+  "files": {
+    "d11b544e282a7a14ca193d90d3e02e9b4e78b7f45980c36dd8f42eeb4e4ae051": {
+      "displayName": "SESEmailForwarder/Code",
+      "source": {
+        "path": "asset.d11b544e282a7a14ca193d90d3e02e9b4e78b7f45980c36dd8f42eeb4e4ae051",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-current_region-d345a4fa": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "d11b544e282a7a14ca193d90d3e02e9b4e78b7f45980c36dd8f42eeb4e4ae051.zip",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
+    "80032fe0350f57dadbb5be3049fa1ec0ab1762d7b10a1a6da38cfba90a6e41c6": {
+      "displayName": "EmailForwardingStack Template",
+      "source": {
+        "path": "EmailForwardingStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region-4a19ac8f": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "80032fe0350f57dadbb5be3049fa1ec0ab1762d7b10a1a6da38cfba90a6e41c6.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

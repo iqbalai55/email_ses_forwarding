@@ -1,0 +1,1 @@
+{ "iqbal@croptic.co": "miqbalai55@gmail.com", "imam@croptic.co": "imam@gmail.com" , "rahmad@croptic.co": "rahmad.dawood@gmail.com", "sales@croptic.co": "croptic.co@gmail.com" }
